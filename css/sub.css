@@ -270,11 +270,11 @@ body {
 
 .profile-right>ul:nth-child(2)::after {
     width: 1.5px;
-    height: 85%;
+    height: 87%;
     background-color: #e0e0e0;
     content: "";
     position: absolute;
-    top: 62%;
+    top: 58%;
     transform: translateY(-50%);
     right: 75px;
 }
@@ -297,22 +297,28 @@ body {
     right: 0;
     top: 0;
     font-size: 1.5rem;
-}
-.profile-right>ul:nth-child(2) li:nth-child(3)::before {
-    content: "2021.06";
+}.profile-right>ul:nth-child(2) li:nth-child(3)::before {
+    content: "2022.03";
     position: absolute;
     right: 0;
     top: 0;
     font-size: 1.5rem;
 }
 .profile-right>ul:nth-child(2) li:nth-child(4)::before {
-    content: "2021.02";
+    content: "2021.06";
     position: absolute;
     right: 0;
     top: 0;
     font-size: 1.5rem;
 }
 .profile-right>ul:nth-child(2) li:nth-child(5)::before {
+    content: "2021.02";
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.5rem;
+}
+.profile-right>ul:nth-child(2) li:nth-child(6)::before {
     content: "2016.03";
     position: absolute;
     right: 0;
@@ -328,7 +334,7 @@ body {
     background-color: #e0e0e0;
     border-radius: 50%;
     right: 73.5px;
-    top: 65%;
+    top: 70%;
     transform: translateY(-50%);
 }
 
@@ -340,7 +346,7 @@ body {
     background-color: #e0e0e0;
     border-radius: 50%;
     right: 73.5px;
-    top: 29%;
+    top: 65%;
     transform: translateY(-50%);
 }
 
@@ -352,7 +358,7 @@ body {
     background-color: #e0e0e0;
     border-radius: 50%;
     right: 73.5px;
-    top: 50%;
+    top: 60%;
     transform: translateY(-50%);
 }
 .profile-right>ul:nth-child(2) li:nth-child(4)::after {
@@ -363,10 +369,21 @@ body {
     background-color: #e0e0e0;
     border-radius: 50%;
     right: 73.5px;
-    top: 50%;
+    top: 25%;
     transform: translateY(-50%);
 }
 .profile-right>ul:nth-child(2) li:nth-child(5)::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    right: 73.5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.profile-right>ul:nth-child(2) li:nth-child(6)::after {
     content: "";
     position: absolute;
     width: 5px;

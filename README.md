@@ -1,2 +1,2 @@
 # JOEULBI portfolio
-https://ggulpodo.github.io/
+https://bbielo.github.io/
