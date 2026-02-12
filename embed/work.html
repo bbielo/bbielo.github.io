@@ -1,79 +1,77 @@
 <!doctype html>
 <html lang="ko">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
-    >
-    <title>Work Embed</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Work Embed</title>
 
-    <!-- iframe 내 여백 제거 + 배경 투명/화이트 정리 -->
-    <style>
-        html, body { margin: 0; padding: 0; }
-        body { background: transparent; }
-        /* iframe 높이 안에서 깔끔하게 보이도록 최소 패딩 */
-        .embed-pad { padding: 0; }
-    </style>
+  <!-- 핵심: embed 폴더에서도 루트(work.html 위치) 기준으로 경로 해석 -->
+  <base href="../" />
 
-    <!-- (필수) swiper -->
-    <link rel="stylesheet" href="../js/swiper/swiper.min.css">
-    <script src="../js/swiper/swiper.min.js"></script>
+  <!-- jquery -->
+  <script src="js/jquery.min.js"></script>
 
-    <!-- 기존 스타일 -->
-    <link rel="stylesheet" type="text/css" href="../css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="../css/sub.css">
-    <style>
+  <!-- html5shiv -->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+  <![endif]-->
+
+  <script src="js/respond.min.js"></script>
+
+  <!-- swiper (로컬 파일 그대로 사용) -->
+  <link rel="stylesheet" href="js/swiper/swiper.min.css" />
+  <script src="js/swiper/swiper.min.js"></script>
+
+  <!-- css -->
+  <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="css/sub.css" />
+
+  <!-- embed 전용 오버라이드 (여백/스크롤 최소화 + 화살표 보이게) -->
+  <style>
     html, body {
-    margin: 0;
-    padding: 0;
-    overflow: visible; /* 화살표 살리기 */
-    }
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent;
+        overflow: visible;
+        }
 
-    .embed-pad { padding: 0; }
+        /* 섹션 위아래 과한 여백 제거 */
+        .publishing {
+        padding: 0 !important;
+        margin: 0 !important;
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+        }
 
-    /* 레이아웃 여백 정리 */
-    .publishing {
-    padding: 0 !important;
-    margin: 0 !important;
-    height: auto !important;
-    min-height: 0 !important;
-    overflow: visible !important;
-    }
+        /* container가 여백을 만들면 제거 */
+        .publishing .container {
+        padding: 0 !important;
+        margin: 0 auto !important;
+        }
 
-    .publishing .container {
-    padding: 0 !important;
-    margin: 0 auto !important;
-    }
+        /* 도트가 아래로 떨어지면서 공간 많이 먹는 경우 정리 */
+        .swiper-pagination {
+        position: static !important;
+        margin-top: 14px !important;
+        }
 
-    .publishing-tit {
-    margin: 0 0 20px !important;
-    }
-
-    /* 슬라이드 라운드 줄이기 */
-    .swiper-slide {
-    border-radius: 28px !important;
-    overflow: hidden;
-    }
-
-    /* 설명/도트 간격 */
-    .slide-cont { margin-top: 18px !important; }
-    .swiper-pagination {
-    position: static !important;
-    margin-top: 14px !important;
-    }
+        /* 슬라이드가 너무 둥글면 값 낮추기 (원하면 16~36 사이 조절) */
+        .swiper-slide {
+        border-radius: 28px !important;
+        overflow: hidden;
+        }
     </style>
 
-    <!-- jQuery가 꼭 필요하면 유지 (sub.css/script에 의존하면) -->
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/respond.min.js"></script>
-    </head>
+    <!-- 기존 스크립트(슬라이더/도트/컨텐츠 연동이 여기 있을 가능성 높음) -->
+    <script src="js/script.js"></script>
+</head>
 
-    <body>
-    <!-- wrap/header 다 제거하고 필요한 구역만 -->
+<body>
+    <!-- 원래 work.html의 publishing 부분만 그대로 유지 -->
     <section class="publishing">
-        <div class="container embed-pad">
+    <div class="container">
         <h2 class="publishing-tit">CLONE CODING</h2>
 
         <div class="swiper">
@@ -82,8 +80,8 @@
                 <div class="swiper-slide slide-01">
                 <div class="slide-black-bg">
                     <ul>
-                    <li><a href="https://github.com/ggulpodo/ggulpodo.github.io.git" target="_blank" rel="noreferrer noopener">github</a></li>
-                    <li><a href="https://ggulpodo.github.io/" target="_blank" rel="noreferrer noopener">Work</a></li>
+                    <li><a href="https://github.com/ggulpodo/ggulpodo.github.io.git" target="_blank">github</a></li>
+                    <li><a href="https://ggulpodo.github.io/" target="_blank">Work</a></li>
                     </ul>
                 </div>
                 </div>
@@ -91,8 +89,8 @@
                 <div class="swiper-slide slide-02">
                 <div class="slide-black-bg">
                     <ul>
-                    <li><a href="https://www.sony.co.kr/" target="_blank" rel="noreferrer noopener">Origin</a></li>
-                    <li><a href="https://ggulpodo.github.io/sony/" target="_blank" rel="noreferrer noopener">Work</a></li>
+                    <li><a href="https://www.sony.co.kr/" target="_blank">Origin</a></li>
+                    <li><a href="https://ggulpodo.github.io/sony/" target="_blank">Work</a></li>
                     </ul>
                 </div>
                 </div>
@@ -100,8 +98,8 @@
                 <div class="swiper-slide slide-03">
                 <div class="slide-black-bg">
                     <ul>
-                    <li><a href="https://nexus-official.com/" target="_blank" rel="noreferrer noopener">Origin</a></li>
-                    <li><a href="https://ggulpodo.github.io/nexus/" target="_blank" rel="noreferrer noopener">Work</a></li>
+                    <li><a href="https://nexus-official.com/" target="_blank">Origin</a></li>
+                    <li><a href="https://ggulpodo.github.io/nexus/" target="_blank">Work</a></li>
                     </ul>
                 </div>
                 </div>
@@ -109,8 +107,8 @@
                 <div class="swiper-slide slide-04">
                 <div class="slide-black-bg">
                     <ul>
-                    <li><a href="https://www.spc.co.kr/" target="_blank" rel="noreferrer noopener">Origin</a></li>
-                    <li><a href="https://ggulpodo.github.io/SPC/" target="_blank" rel="noreferrer noopener">Work</a></li>
+                    <li><a href="https://www.spc.co.kr/" target="_blank">Origin</a></li>
+                    <li><a href="https://ggulpodo.github.io/SPC/" target="_blank">Work</a></li>
                     </ul>
                 </div>
                 </div>
@@ -118,8 +116,8 @@
                 <div class="swiper-slide slide-05">
                 <div class="slide-black-bg">
                     <ul>
-                    <li><a href="https://www.inha.ac.kr/kr/index.do" target="_blank" rel="noreferrer noopener">Origin</a></li>
-                    <li><a href="https://ggulpodo.github.io/inha/" target="_blank" rel="noreferrer noopener">Work</a></li>
+                    <li><a href="https://www.inha.ac.kr/kr/index.do" target="_blank">Origin</a></li>
+                    <li><a href="https://ggulpodo.github.io/inha/" target="_blank">Work</a></li>
                     </ul>
                 </div>
                 </div>
@@ -127,8 +125,8 @@
                 <div class="swiper-slide slide-06">
                 <div class="slide-black-bg">
                     <ul>
-                    <li><a href="http://www.stxconst.co.kr/" target="_blank" rel="noreferrer noopener">Origin</a></li>
-                    <li><a href="https://ggulpodo.github.io/stxconst/" target="_blank" rel="noreferrer noopener">Work</a></li>
+                    <li><a href="http://www.stxconst.co.kr/" target="_blank">Origin</a></li>
+                    <li><a href="https://ggulpodo.github.io/stxconst/" target="_blank">Work</a></li>
                     </ul>
                 </div>
                 </div>
@@ -140,7 +138,7 @@
             <div class="swiper-button-prev"></div>
         </div>
 
-        <!-- 슬라이드별 설명(원본 그대로) -->
+        <!-- 슬라이드별 설명 -->
         <div class="slide-cont">
             <ul>
             <li>포트폴리오</li>
@@ -148,6 +146,7 @@
             <li>HTML5 CSS3 javascript</li>
             </ul>
         </div>
+
         <div class="slide-cont">
             <ul>
             <li>SONY</li>
@@ -155,6 +154,7 @@
             <li>HTML5 CSS3 javascript</li>
             </ul>
         </div>
+
         <div class="slide-cont">
             <ul>
             <li>NEXUS</li>
@@ -162,6 +162,7 @@
             <li>HTML5 CSS3 javascript</li>
             </ul>
         </div>
+
         <div class="slide-cont">
             <ul>
             <li>SPC</li>
@@ -169,6 +170,7 @@
             <li>HTML5 CSS3 javascript</li>
             </ul>
         </div>
+
         <div class="slide-cont">
             <ul>
             <li>인하대학교</li>
@@ -176,6 +178,7 @@
             <li>HTML5 CSS3 javascript</li>
             </ul>
         </div>
+
         <div class="slide-cont">
             <ul>
             <li>STX</li>
@@ -188,38 +191,5 @@
         <!-- 도트 -->
         <div class="swiper-pagination"></div>
     </section>
-
-    <!--  임베드 전용 스와이퍼 초기화: 헤더 없는 페이지에서도 동작하도록 -->
-    <script>
-    (function () {
-        if (window.__WORK_EMBED_SWIPER__) return;
-
-        var swiper = new Swiper(".mySwiper", {
-        loop: true,
-        speed: 600,
-        centeredSlides: true,
-        slidesPerView: 3,
-        spaceBetween: 80,
-
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-
-        // 반응형(모바일에서는 1장)
-        breakpoints: {
-            0: { slidesPerView: 1, spaceBetween: 20 },
-            768: { slidesPerView: 3, spaceBetween: 60 },
-            1200: { slidesPerView: 3, spaceBetween: 80 }
-        }
-        });
-
-        window.__WORK_EMBED_SWIPER__ = swiper;
-    })();
-    </script>
-</body>
+    </body>
 </html>
