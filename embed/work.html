@@ -28,20 +28,40 @@
     html, body {
     margin: 0;
     padding: 0;
-    overflow: visible;
+    overflow: visible; /* 화살표 살리기 */
     }
 
     .embed-pad { padding: 0; }
 
+    /* 레이아웃 여백 정리 */
     .publishing {
     padding: 0 !important;
     margin: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
     overflow: visible !important;
     }
 
     .publishing .container {
-    padding-top: 0 !important;
-    margin-top: 0 !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    }
+
+    .publishing-tit {
+    margin: 0 0 20px !important;
+    }
+
+    /* 슬라이드 라운드 줄이기 */
+    .swiper-slide {
+    border-radius: 28px !important;
+    overflow: hidden;
+    }
+
+    /* 설명/도트 간격 */
+    .slide-cont { margin-top: 18px !important; }
+    .swiper-pagination {
+    position: static !important;
+    margin-top: 14px !important;
     }
     </style>
 
