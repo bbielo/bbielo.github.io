@@ -14,7 +14,7 @@
         html, body { margin: 0; padding: 0; }
         body { background: transparent; }
         /* iframe 높이 안에서 깔끔하게 보이도록 최소 패딩 */
-        .embed-pad { padding: 24px 20px; }
+        .embed-pad { padding: 0; }
     </style>
 
     <!-- (필수) swiper -->
@@ -24,6 +24,27 @@
     <!-- 기존 스타일 -->
     <link rel="stylesheet" type="text/css" href="../css/normalize.css">
     <link rel="stylesheet" type="text/css" href="../css/sub.css">
+    <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .embed-pad {
+        padding: 0;
+    }
+
+    .publishing {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .publishing .container {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+    }
+    </style>
 
     <!-- jQuery가 꼭 필요하면 유지 (sub.css/script에 의존하면) -->
     <script src="../js/jquery.min.js"></script>
@@ -181,6 +202,5 @@
         window.__WORK_EMBED_SWIPER__ = swiper;
     })();
     </script>
-
 </body>
 </html>
