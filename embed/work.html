@@ -2,80 +2,23 @@
 <html lang="ko">
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Work Embed</title>
 
-    <!-- 핵심: embed 폴더에서도 루트(work.html 위치) 기준으로 경로 해석 -->
-    <base href="../" />
+    <!-- ✅ GitHub Pages(도메인 루트) 기준으로 절대경로 -->
+    <script src="/js/jquery.min.js"></script>
 
-    <!-- jquery -->
-    <script src="js/jquery.min.js"></script>
-
-    <!-- html5shiv -->
-    <!--[if lt IE 9]>
-        <script src="js/html5shiv.js"></script>
-    <![endif]-->
-
-    <script src="js/respond.min.js"></script>
-
-    <!-- swiper (로컬 파일 그대로 사용) -->
-    <link rel="stylesheet" href="js/swiper/swiper.min.css" />
-    <script src="js/swiper/swiper.min.js"></script>
+    <!-- swiper -->
+    <link rel="stylesheet" href="/js/swiper/swiper.min.css" />
+    <script src="/js/swiper/swiper.min.js"></script>
 
     <!-- css -->
-    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="css/sub.css" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/sub.css" />
 
-    <!-- embed 전용 오버라이드 (여백/스크롤 최소화 + 화살표 보이게) -->
-    <style>
-    html, body {
-    margin: 0 !important;
-    padding: 0 !important;
-    background: transparent;
-    }
-
-    /* 섹션 여백 제거 */
-    .publishing {
-    padding: 0 !important;
-    margin: 0 !important;
-    height: auto !important;
-    min-height: 0 !important;
-    }
-
-    /* container 여백 제거 */
-    .publishing .container {
-    padding: 0 !important;
-    margin: 0 auto !important;
-    }
-
-    /* 제목 마진 */
-    .publishing-tit { margin-top: 0 !important; }
-
-    /* 대신 슬라이드만 둥글게 마스킹 */
-    .mySwiper .swiper-slide {
-    border-radius: 28px !important;
-    overflow: hidden !important;
-    }
-
-    /* 배경 이미지 비율 유지 (늘어나지 않게) */
-    .mySwiper .swiper-slide {
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    }
-
-    /* 도트 */
-    .swiper-pagination {
-    position: static !important;
-    margin-top: 14px !important;
-    margin-bottom: 0 !important;
-    }
-    </style>
-
-    <!-- 기존 스크립트(슬라이더/도트/컨텐츠 연동이 여기 있을 가능성 높음) -->
-    <script src="js/script.js"></script>
+    <script src="/js/script.js"></script>
 </head>
+
 
 <body>
     <!-- 원래 work.html의 publishing 부분만 그대로 유지 -->
