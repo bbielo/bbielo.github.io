@@ -151,46 +151,58 @@
     </section>
 
     <script>
-        function syncSlideCont(realIndex) {
+    function syncSlideCont(swiper) {
         const conts = document.querySelectorAll(".slide-cont");
+        const count = conts.length;
+        const idx = swiper.realIndex % count;
         conts.forEach((el, i) => {
-            el.style.display = (i === realIndex) ? "block" : "none";
+        el.style.display = (i === idx) ? "block" : "none";
         });
+    }
+
+    window.addEventListener("load", () => {
+        try {
+        if (window.mySwiper && typeof window.mySwiper.destroy === "function") {
+            window.mySwiper.destroy(true, true);
         }
+        } catch (e) {}
 
-        window.addEventListener("load", () => {
-        // [BUGFIX] script.js로 중복 초기화하면 또 밀림. 그래서 script.js는 아예 안 씀.
+        window.mySwiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 60,
+        loop: true,
 
-        const swiper = new Swiper(".mySwiper", {
-            slidesPerView: 3,
-            spaceBetween: 60,
-            loop: true,
-            navigation: {
+        centeredSlides: true,
+        initialSlide: 0, // 가운데 시작 조정
+
+        navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
-            },
-            pagination: {
+        },
+        pagination: {
             el: ".swiper-pagination",
             clickable: true,
-            },
-            breakpoints: {
-            0: { slidesPerView: 1, spaceBetween: 20 },
-            768: { slidesPerView: 2, spaceBetween: 40 },
-            1024: { slidesPerView: 3, spaceBetween: 60 },
-            },
-            on: {
-            init: function () {
-                syncSlideCont(this.realIndex);
-            },
-            slideChange: function () {
-                syncSlideCont(this.realIndex);
-            }
-            }
+        },
+        breakpoints: {
+            0:   { slidesPerView: 1, spaceBetween: 20, centeredSlides: true },
+            768: { slidesPerView: 2, spaceBetween: 40, centeredSlides: true },
+            1024:{ slidesPerView: 3, spaceBetween: 60, centeredSlides: true },
+        },
+        on: {
+            init() { syncSlideCont(this); },
+            slideChange() { syncSlideCont(this); },
+            breakpoint() { syncSlideCont(this); },
+            resize() { syncSlideCont(this); },
+        }
         });
 
-        // 혹시 첫 로드에서 CSS/폰트 로딩 타이밍으로 밀리면 업데이트 한 번
-        setTimeout(() => swiper.update(), 0);
-        });
+        // (레이아웃 로딩 후 1회 더)
+        setTimeout(() => {
+        window.mySwiper.update();
+        syncSlideCont(window.mySwiper);
+        }, 0);
+    });
     </script>
+
     </body>
 </html>
