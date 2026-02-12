@@ -33,56 +33,6 @@
     .swiper-pagination {
         margin-bottom: 0 !important;
     }
-
-    /* 화살표 안나와서...[bugfix] */
-    .swiper,
-    .swiper-container,
-    .mySwiper {
-    overflow: visible !important;
-    }
-
-    /* 버튼 박스 */
-    .swiper-button-next,
-    .swiper-button-prev {
-    width: 46px !important;
-    height: 46px !important;
-    border-radius: 9999px !important;
-    background: rgba(255,255,255,0.9) !important;
-    border: 1px solid rgba(0,0,0,0.08) !important;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08) !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    opacity: 1 !important;
-    visibility: visible !important;
-    z-index: 999999 !important;
-
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-
-    color: #ff6a00 !important;
-    }
-
-    /* Swiper 기본 화살표(::after)가 죽어있을 수 있으니 우리가 직접 그림 */
-    .swiper-button-next::after,
-    .swiper-button-prev::after {
-    content: "" !important;
-    width: 10px !important;
-    height: 10px !important;
-    border-top: 3px solid currentColor !important;
-    border-right: 3px solid currentColor !important;
-    display: block !important;
-    }
-
-    /* 방향 */
-    .swiper-button-prev::after { transform: rotate(-135deg) !important; }
-    .swiper-button-next::after { transform: rotate(45deg) !important; }
-
-    /* 위치 */
-    .swiper-button-prev { left: 14px !important; }
-    .swiper-button-next { right: 14px !important; }
     </style>
     <script src="/js/script.js"></script>
 </head>
