@@ -30,45 +30,47 @@
     <!-- embed 전용 오버라이드 (여백/스크롤 최소화 + 화살표 보이게) -->
     <style>
     html, body {
-        margin: 0 !important;
-        padding: 0 !important;
-        background: transparent;
-        overflow: visible;
-        }
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent;
+    }
 
-        /* 섹션 위아래 과한 여백 제거 */
-        .publishing {
-        padding: 0 !important;
-        margin: 0 !important;
-        height: auto !important;
-        min-height: 0 !important;
-        overflow: visible !important;
-        }
+    /* 섹션 여백 제거 */
+    .publishing {
+    padding: 0 !important;
+    margin: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    }
 
-        /* container가 여백을 만들면 제거 */
-        .publishing .container {
-        padding: 0 !important;
-        margin: 0 auto !important;
-        }
+    /* container 여백 제거 */
+    .publishing .container {
+    padding: 0 !important;
+    margin: 0 auto !important;
+    }
 
-        /* 도트가 아래로 떨어지면서 공간 많이 먹는 경우 정리 */
-        .swiper-pagination {
-        position: static !important;
-        margin-top: 14px !important;
-        margin-bottom: 0px !important;
-        }
+    /* 제목 마진 */
+    .publishing-tit { margin-top: 0 !important; }
 
-        /* 슬라이드가 너무 둥글면 값 낮추기 (원하면 16~36 사이 조절) */
-        .swiper-slide {
-        border-radius: 28px !important;
-        overflow: hidden;
-        }
-        .publishing-tit { margin-top: 0 !important; }
+    /* 대신 슬라이드만 둥글게 마스킹 */
+    .mySwiper .swiper-slide {
+    border-radius: 28px !important;
+    overflow: hidden !important;
+    }
 
-        .mySwiper .swiper-slide {
-        width: auto !important;
-        }
+    /* 배경 이미지 비율 유지 (늘어나지 않게) */
+    .mySwiper .swiper-slide {
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    }
 
+    /* 도트 */
+    .swiper-pagination {
+    position: static !important;
+    margin-top: 14px !important;
+    margin-bottom: 0 !important;
+    }
     </style>
 
     <!-- 기존 스크립트(슬라이더/도트/컨텐츠 연동이 여기 있을 가능성 높음) -->
