@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="ko">
-<head>
+    <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Work Embed</title>
 
-    <!-- GitHub Pages(도메인 루트) 기준으로 절대경로 -->
+    <!-- GitHub Pages(도메인 루트) 기준 절대경로 -->
     <script src="/js/jquery.min.js"></script>
 
     <!-- swiper -->
@@ -17,41 +17,32 @@
     <link rel="stylesheet" href="/css/sub.css" />
 
     <style>
-    .swiper-button-next,
-    .swiper-button-prev {
-    display: flex !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    z-index: 9999 !important;
-    color: #ff6a00 !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    }
-    .publishing-tit{
-        margin-top: 0 !important;
-    }
-    .swiper-pagination {
-        margin-bottom: 0 !important;
-    }
+        html, body { margin: 0; padding: 0; }
+
+        .publishing-tit { margin-top: 0 !important; }
+        .swiper-pagination { margin-bottom: 0 !important; }
+
+        /* (선택) iframe에서 잘릴 때 대비 */
+        .publishing, .publishing .container { overflow: visible !important; }
+
     </style>
-    <script src="/js/script.js"></script>
-</head>
+    </head>
 
-
-<body>
-    <!-- 원래 work.html의 publishing 부분만 그대로 유지 -->
+    <body>
     <section class="publishing">
-    <div class="container">
+        <div class="container">
         <h2 class="publishing-tit">CLONE CODING</h2>
 
         <div class="swiper">
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
             <div class="swiper-container mySwiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide slide-01">
                 <div class="slide-black-bg">
                     <ul>
-                    <li><a href="https://github.com/ggulpodo/ggulpodo.github.io.git" target="_blank">github</a></li>
-                    <li><a href="https://ggulpodo.github.io/" target="_blank">Work</a></li>
+                    <li><a href="https://github.com/ggulpodo/ggulpodo.github.io.git" target="_blank" rel="noreferrer">github</a></li>
+                    <li><a href="https://ggulpodo.github.io/" target="_blank" rel="noreferrer">Work</a></li>
                     </ul>
                 </div>
                 </div>
@@ -59,8 +50,8 @@
                 <div class="swiper-slide slide-02">
                 <div class="slide-black-bg">
                     <ul>
-                    <li><a href="https://www.sony.co.kr/" target="_blank">Origin</a></li>
-                    <li><a href="https://ggulpodo.github.io/sony/" target="_blank">Work</a></li>
+                    <li><a href="https://www.sony.co.kr/" target="_blank" rel="noreferrer">Origin</a></li>
+                    <li><a href="https://ggulpodo.github.io/sony/" target="_blank" rel="noreferrer">Work</a></li>
                     </ul>
                 </div>
                 </div>
@@ -68,8 +59,8 @@
                 <div class="swiper-slide slide-03">
                 <div class="slide-black-bg">
                     <ul>
-                    <li><a href="https://nexus-official.com/" target="_blank">Origin</a></li>
-                    <li><a href="https://ggulpodo.github.io/nexus/" target="_blank">Work</a></li>
+                    <li><a href="https://nexus-official.com/" target="_blank" rel="noreferrer">Origin</a></li>
+                    <li><a href="https://ggulpodo.github.io/nexus/" target="_blank" rel="noreferrer">Work</a></li>
                     </ul>
                 </div>
                 </div>
@@ -77,8 +68,8 @@
                 <div class="swiper-slide slide-04">
                 <div class="slide-black-bg">
                     <ul>
-                    <li><a href="https://www.spc.co.kr/" target="_blank">Origin</a></li>
-                    <li><a href="https://ggulpodo.github.io/SPC/" target="_blank">Work</a></li>
+                    <li><a href="https://www.spc.co.kr/" target="_blank" rel="noreferrer">Origin</a></li>
+                    <li><a href="https://ggulpodo.github.io/SPC/" target="_blank" rel="noreferrer">Work</a></li>
                     </ul>
                 </div>
                 </div>
@@ -86,8 +77,8 @@
                 <div class="swiper-slide slide-05">
                 <div class="slide-black-bg">
                     <ul>
-                    <li><a href="https://www.inha.ac.kr/kr/index.do" target="_blank">Origin</a></li>
-                    <li><a href="https://ggulpodo.github.io/inha/" target="_blank">Work</a></li>
+                    <li><a href="https://www.inha.ac.kr/kr/index.do" target="_blank" rel="noreferrer">Origin</a></li>
+                    <li><a href="https://ggulpodo.github.io/inha/" target="_blank" rel="noreferrer">Work</a></li>
                     </ul>
                 </div>
                 </div>
@@ -95,17 +86,14 @@
                 <div class="swiper-slide slide-06">
                 <div class="slide-black-bg">
                     <ul>
-                    <li><a href="http://www.stxconst.co.kr/" target="_blank">Origin</a></li>
-                    <li><a href="https://ggulpodo.github.io/stxconst/" target="_blank">Work</a></li>
+                    <li><a href="http://www.stxconst.co.kr/" target="_blank" rel="noreferrer">Origin</a></li>
+                    <li><a href="https://ggulpodo.github.io/stxconst/" target="_blank" rel="noreferrer">Work</a></li>
                     </ul>
                 </div>
                 </div>
             </div>
             </div>
 
-            <!-- 좌우 버튼 -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
         </div>
 
         <!-- 슬라이드별 설명 -->
@@ -156,40 +144,53 @@
             <li>HTML5 CSS3 javascript</li>
             </ul>
         </div>
-        </div>
 
         <!-- 도트 -->
         <div class="swiper-pagination"></div>
+        </div>
     </section>
-    <script>
-        window.addEventListener("load", () => {
-            // 기존 인스턴스가 있으면 제거(중복 방지)
-            try {
-            if (window.mySwiper && typeof window.mySwiper.destroy === "function") {
-                window.mySwiper.destroy(true, true);
-            }
-            } catch (e) {}
 
-            // 새로 생성 (embed 전용 고정 레이아웃)
-            window.mySwiper = new Swiper(".mySwiper", {
+    <script>
+        function syncSlideCont(realIndex) {
+        const conts = document.querySelectorAll(".slide-cont");
+        conts.forEach((el, i) => {
+            el.style.display = (i === realIndex) ? "block" : "none";
+        });
+        }
+
+        window.addEventListener("load", () => {
+        // [BUGFIX] script.js로 중복 초기화하면 또 밀림. 그래서 script.js는 아예 안 씀.
+
+        const swiper = new Swiper(".mySwiper", {
             slidesPerView: 3,
             spaceBetween: 60,
             loop: true,
             navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
             },
             pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
+            el: ".swiper-pagination",
+            clickable: true,
             },
             breakpoints: {
-                0: { slidesPerView: 1, spaceBetween: 20 },
-                768: { slidesPerView: 2, spaceBetween: 40 },
-                1024: { slidesPerView: 3, spaceBetween: 60 }, // 1200 -> 1024로
+            0: { slidesPerView: 1, spaceBetween: 20 },
+            768: { slidesPerView: 2, spaceBetween: 40 },
+            1024: { slidesPerView: 3, spaceBetween: 60 },
             },
-            });
+            on: {
+            init: function () {
+                syncSlideCont(this.realIndex);
+            },
+            slideChange: function () {
+                syncSlideCont(this.realIndex);
+            }
+            }
         });
-        </script>
+
+        // 혹시 첫 로드에서 CSS/폰트 로딩 타이밍으로 밀리면 업데이트 한 번
+        setTimeout(() => swiper.update(), 0);
+        });
+    </script>
     </body>
 </html>
