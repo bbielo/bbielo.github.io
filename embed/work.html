@@ -16,6 +16,24 @@
     <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/sub.css" />
 
+    <style>
+    .swiper-button-next,
+    .swiper-button-prev {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 9999 !important;
+    color: #ff6a00 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    }
+    .publishing-tit{
+        margin-top: 0 !important;
+    }
+    .swiper-pagination {
+        margin-bottom: 0 !important;
+    }
+    </style>
     <script src="/js/script.js"></script>
 </head>
 
@@ -156,7 +174,6 @@
             window.mySwiper = new Swiper(".mySwiper", {
             slidesPerView: 3,
             spaceBetween: 60,
-            centeredSlides: false,
             loop: true,
             navigation: {
                 nextEl: ".swiper-button-next",
@@ -166,11 +183,10 @@
                 el: ".swiper-pagination",
                 clickable: true,
             },
-            // 반응형: 화면 줄면 1~2개로 자동
             breakpoints: {
                 0: { slidesPerView: 1, spaceBetween: 20 },
                 768: { slidesPerView: 2, spaceBetween: 40 },
-                1200: { slidesPerView: 3, spaceBetween: 60 },
+                1024: { slidesPerView: 3, spaceBetween: 60 }, // ✅ 1200 -> 1024로
             },
             });
         });
