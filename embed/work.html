@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="/css/sub.css" />
 
     <style>
-        html, body { margin: 0; padding: 0; }
+        html, body { width: 100%; overflow-x: hidden; }
 
         .publishing-tit { margin-top: 0 !important; }
         .swiper-pagination { margin-bottom: 0 !important; }
@@ -25,6 +25,21 @@
         /* (선택) iframe에서 잘릴 때 대비 */
         .publishing, .publishing .container { overflow: visible !important; }
 
+        body.is-embed .publishing .container{
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 auto !important;
+            padding: 0 60px; /* 양옆 여백은 취향 */
+        }
+
+        body.is-embed .swiper-container,
+        body.is-embed .mySwiper{
+            width: 100% !important;
+        }
+
+        .container {
+            margin: 0 !important;
+        }
     </style>
     </head>
 
